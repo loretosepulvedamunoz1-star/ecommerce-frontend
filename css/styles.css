@@ -1,0 +1,81 @@
+:root {
+  --bs-font-sans-serif: 'Poppins', sans-serif;
+  --gap: 16px;
+  --bg: #a9afb6;
+  --card: #034d22;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: var(--bs-font-sans-serif);
+  background: var(--bg);
+  color: #222;
+}
+
+#mainNav {
+  transition: background-color .3s ease, box-shadow .3s ease, backdrop-filter .3s ease;
+}
+.navbar-scrolled {
+  background-color: rgba(33, 37, 41, 0.95) !important;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+}
+
+.letter-spacing-2 { letter-spacing: 2px; }
+
+/* Ajuste herobox para darle mas espacio al boton */
+.hero-box {
+  height: 140px;
+  background: linear-gradient(135deg,#e9ecef,#ffffff);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.card {
+  background: var(--card);
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+}
+
+.form-control.text-area,
+textarea.form-control.text-area,
+textarea.form-control {
+  height: 100px;
+}
+
+/* Botón Ir arriba */
+#btnTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none; /* oculto por defecto */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  text-align: center;
+  line-height: 30px;
+  z-index: 999;
+}
+
+@media (min-width: 768px) {
+  .cards { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+  .hero-box { height: 180px; }
+}
+@media (min-width: 1024px) {
+  .cards { grid-template-columns: repeat(3,1fr); }
+  .container { max-width: 1100px; margin: 0 auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
