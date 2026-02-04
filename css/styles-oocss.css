@@ -1,0 +1,16 @@
+/* === OBJETOS REUTILIZABLES === */
+.box { border-radius: 8px; display: flex; }
+.box--center { align-items: center; justify-content: center; }
+.shadow { box-shadow: 0 1px 6px rgba(0,0,0,0.05); }
+.text-bold { font-weight: bold; }
+.text-white { color: #fff; }
+.text-gray { color: #ddd; }
+
+/* === COMPONENTES USANDO OBJETOS === */
+.navbar { transition: background-color .3s ease; }
+.navbar--scrolled { background-color: rgba(33,37,41,0.95); }
+
+.hero-box { @extend .box; @extend .box--center; background: linear-gradient(135deg,#e9ecef,#ffffff); height: 180px; }
+
+.card { @extend .box; @extend .shadow; background: var(--card); color: #fff; }
+.card img { max-height: 200px; object-fit: cover; }
